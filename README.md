@@ -27,6 +27,7 @@ window.validao.openDummyStakeModal(config);
 ```
 
 3. Once the function is called, a modal will appear in the center of the screen:
+
 ![image](https://github.com/user-attachments/assets/78468865-4a90-4a64-b601-99ed9eded199)
 - `Simulate Stake Successful`: simulates the completion of a staking action without errors.
 - `Simulate Stake Error`: simulates an error occurring during the staking action.
@@ -41,7 +42,7 @@ The following properties can be passed in the config object to the validao.openD
 |-----------|----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `chain`   | string   | -                  | Options: `hyperliquid`, `celestia`, `axelar`, `stargaze`, `seda`                                                                                                                                                      |
 | `title`   | string   | "Stake with ValiDAO" | Title of the modal                                                                                                                                                                                            |
-| `onStake` | (opts) => void | -                  | Triggered when the stake is completed successfully. <br> The opts object contains: <br> `closeModal`: function to close the modal. `showSuccessMessage`: function to display a success message. |
+| `onStake` | (opts) => void | -                  | Triggered when the stake is completed successfully. <br> The `opts` object contains: <br> `closeModal`: function to close the modal. `showSuccessMessage`: function to display a success message. |
 | `onError` | (error, opts) => void | -                  | Triggered when an error occurs during staking. <br> The `error` parameter is a string. The `opts` object contains: <br> `closeModal`: function to close the modal. <br> `showErrorMessage`: function to display an error message.          |
 
 Example:
