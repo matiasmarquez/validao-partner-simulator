@@ -34,7 +34,7 @@ All the following API refers to the config object passed to `validao.openDummySt
 | `chain`   | string   | -                  | `hyperliquid`, `celestia`, `axelar`, `stargaze`, `seda`                                                                                                                                                      |
 | `title`   | string   | Stake with ValiDAO | The modal's title                                                                                                                                                                                            |
 | `onStake` | (opts) => void | -                  | Event when the stake is finished succesfully. <br/> The `opts` object contains: <br/>   `closeModal`: function to close the modal. <br/> `showSuccessMessage`: function to show a success message |
-| `onError` | (error, opts) => void | -                  | Event when the stake throws an error. <br/> The `error` is a string and the `opts` object contains: <br/> `closeModal`: function to close the modal. <br/> `showSuccessMessage`: function to show an error message          |
+| `onError` | (error, opts) => void | -                  | Event when the stake throws an error. <br/> The `error` is a string and the `opts` object contains: <br/> `closeModal`: function to close the modal. <br/> `showErrorMessage`: function to show an error message          |
 
 Example:
 
