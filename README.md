@@ -36,7 +36,7 @@ window.validao.openDummyStakeModal(config);
 > This "dummy" modal is a placeholder and will be replaced with the real modal once the integration and development process is complete.
  
 ## Configuration API
-The following properties can be passed in the config object to the validao.openDummyStakeModal() function:
+The following properties can be passed in the `config` object to the `validao.openDummyStakeModal()` function:
 
 | Property  | Type     | Default            | Description                                                                                                                                                                                                  |
 |-----------|----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
