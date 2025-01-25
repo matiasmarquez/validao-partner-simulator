@@ -11,7 +11,7 @@ npm install
 ```
 3. Run the application
 ```bash
-npm dev
+npm run dev
 ```
 
 ## How to use the SDK
