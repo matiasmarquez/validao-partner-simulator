@@ -32,7 +32,7 @@ window.validao.openStakeModal(config);
 
  
 ## Configuration API
-The following properties can be passed in the `config` object to the `validao.openDummyStakeModal()` function:
+The following properties can be passed in the `config` object to the `validao.openStakeModal()` function:
 
 | Property  | Type     | Default            | Description                                                                                                                                                                                                  |
 |-----------|----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
