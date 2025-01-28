@@ -41,6 +41,7 @@ type OnErrorOpts = {
 
 export interface StakeModalConfig {
   chain: string;
+  referralCode: string;
   onStake?: (opts: SDKOnStakeOpts) => void;
   onUnstake?: (opts: SDKOnUnstakeOpts) => void;
   onError?: (error: string, opts: SDKOnErrorOpts) => void;

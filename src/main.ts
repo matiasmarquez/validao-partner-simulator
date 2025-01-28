@@ -5,6 +5,7 @@ const button = document.getElementById("trigger") as HTMLButtonElement;
 button.addEventListener("click", () => {
   window.validao.openStakeModal({
     chain: "hyperliquid",
+    referralCode: "123456",
     onStake: ({ closeModal, showSuccessMessage }) => {
       closeModal();
       showSuccessMessage("Stake successful!");
@@ -18,7 +19,7 @@ button.addEventListener("click", () => {
       showErrorMessage(error);
     },
     customization: {
-      theme: "dark",
+      theme: "light",
       rounded: "md",
       font: "outfit",
       color: "teal",
