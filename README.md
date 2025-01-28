@@ -36,7 +36,8 @@ The following properties can be passed in the `config` object to the `validao.op
 
 | Property  | Type     | Default            | Description                                                                                                                                                                                                  |
 |-----------|----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `chain`   | string   | -                  | Options: `hyperliquid`, `celestia`, `axelar`, `stargaze`, `seda`                                                                                                                                                      |
+| `chain`   | string   | -                  | Options: `hyperliquid`, `celestia`, `axelar`, `stargaze`, `seda` |
+| `referralCode`   | string   | -                  |  |
 | `onStake` | (opts) => void | -                  | Triggered when the stake is completed successfully. <br> The `opts` object contains: <br> `closeModal`: function to close the modal. `showSuccessMessage`: function to display a success message. |
 | `onUnstake` | (opts) => void | -                  | Triggered when the unstake is completed successfully. <br> The `opts` object contains: <br> `closeModal`: function to close the modal. `showSuccessMessage`: function to display a success message. |
 | `onError` | (error, opts) => void | -                  | Triggered when an error occurs during staking. <br> The `error` parameter is a string. The `opts` object contains: <br> `closeModal`: function to close the modal. <br> `showErrorMessage`: function to display an error message.          |
@@ -47,6 +48,7 @@ Example:
 ```typescript
 window.validao.openStakeModal({
   chain: "hyperliquid",
+  referralCode: "12345",
   onStake: ({ closeModal, showSuccessMessage }) => {
     closeModal();
     showSuccessMessage("Stake successful!");
