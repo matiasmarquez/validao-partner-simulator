@@ -23,17 +23,13 @@ npm run dev
 ```typescript
 // Refer to the "Configuration API" section for available parameters.  
 
-window.validao.openDummyStakeModal(config);
+window.validao.openStakeModal(config);
 ```
 
 3. Once the function is called, a modal will appear in the center of the screen:
 
-![image](https://github.com/user-attachments/assets/78468865-4a90-4a64-b601-99ed9eded199)
-- `Simulate Stake Successful`: simulates the completion of a staking action without errors.
-- `Simulate Stake Error`: simulates an error occurring during the staking action.
+![image](https://github.com/user-attachments/assets/6e6068a9-14ef-415e-920f-7e98a1bbc386)
 
-> [!NOTE]
-> This "dummy" modal is a placeholder and will be replaced with the real modal once the integration and development process is complete.
  
 ## Configuration API
 The following properties can be passed in the `config` object to the `validao.openDummyStakeModal()` function:
@@ -41,24 +37,42 @@ The following properties can be passed in the `config` object to the `validao.op
 | Property  | Type     | Default            | Description                                                                                                                                                                                                  |
 |-----------|----------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `chain`   | string   | -                  | Options: `hyperliquid`, `celestia`, `axelar`, `stargaze`, `seda`                                                                                                                                                      |
-| `title`   | string   | "Stake with ValiDAO" | Title of the modal                                                                                                                                                                                            |
 | `onStake` | (opts) => void | -                  | Triggered when the stake is completed successfully. <br> The `opts` object contains: <br> `closeModal`: function to close the modal. `showSuccessMessage`: function to display a success message. |
+| `onUnstake` | (opts) => void | -                  | Triggered when the unstake is completed successfully. <br> The `opts` object contains: <br> `closeModal`: function to close the modal. `showSuccessMessage`: function to display a success message. |
 | `onError` | (error, opts) => void | -                  | Triggered when an error occurs during staking. <br> The `error` parameter is a string. The `opts` object contains: <br> `closeModal`: function to close the modal. <br> `showErrorMessage`: function to display an error message.          |
+| `customization` | object | `{ theme: 'light', rounded: 'md', font: 'outfit', color: 'teal' }`                  | Object to customize the look & feel of the modal. Refer to the "Customization API" section for available parameters.          |
 
 Example:
 
 ```typescript
-window.validao.openDummyStakeModal({
+window.validao.openStakeModal({
   chain: "hyperliquid",
   onStake: ({ closeModal, showSuccessMessage }) => {
     closeModal();
     showSuccessMessage("Stake successful!");
   },
+  onUnstake: ({ closeModal, showSuccessMessage }) => {
+    closeModal();
+    showSuccessMessage("Unstake successful!");
+  },
   onError: (error, { closeModal, showErrorMessage }) => {
     closeModal();
     showErrorMessage(error);
   },
+  customization: {
+    theme: "light",
+    rounded: "md",
+    font: "outfit",
+    color: "teal",
+  },
 });
 ```
+## Customization API
+The property customization allows to modify the look & feel of the modal, here are the available properties:
 
-
+| Property  | Type     | Default            | Description                                                                                                                                                                                                  |
+|-----------|----------|--------------------|-----------|
+| `theme`   | string   | `light` | Options: `dark`, `light` |
+| `rounded` | string | `md` | Options: `none`, `md`, `lg` |
+| `font` | string | `outfit` | Options: `outfit`, `inconsolata` |
+| `color` | string | `teal` | Options: `red`, `sky`, `teal` |
